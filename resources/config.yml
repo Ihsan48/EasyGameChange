@@ -1,0 +1,8 @@
+
+gamemode.creative: Sucsess change your gamemode to Creative
+gamemode.other.creative: Sucsess change {name} gamemode to Creative
+gamemode.survival: Sucsess change your gamemode to Survival
+gamemode.other.survival: Sucsess change {name} gamemode to Survival
+
+gamemode.spectator: Sucsess change your gamemode to Spectator
+gamemode.other.spectator: Sucsess change {name} gamemode to Spectator
