@@ -1,0 +1,24 @@
+name: SimpleGamemode
+version: 1.0.0
+api: 4.0.0
+main: Ihsan48\SimpleGamemode\Loader
+author: Ihsan48
+
+commands:
+  gmc:
+    description: "Change gamemode to Creative"
+    permission: gamemode.creative
+  gms:
+    description: "Change gamemode to Survival"
+    permission: gamemode.survival
+  gmspc:
+    description: "Change gamemode to Spectator"
+    permission: gamemode.spectator
+
+permissions:
+  gamemode.creative:
+    default: op
+  gamemode.survival:
+    default: op
+  gamemode.spectator:
+    default: op
