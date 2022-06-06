@@ -14,7 +14,7 @@ class Loader extends PluginBase {
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch ($cmd->getName()) {
             case "gmc":
-                if (!$sender->getGamemode() == GameMode::CREATIVE()) {
+                if (!$sender->isCreative()) {
                     $sender->setGamemode(GameMode::CREATIVE());
 
                 }
@@ -24,7 +24,7 @@ class Loader extends PluginBase {
                 }
                 break;
             case "gms":
-                if (!$sender->getGamemode() == Gamemode::SURVIVAL()) {
+                if (!$sender->isSurvival()) {
                     $sender->setGamemode(GameMode::SURVIVAL());
     
                 }
@@ -34,7 +34,7 @@ class Loader extends PluginBase {
                 }
                 break;
             case "gmspc":
-                if (!$sender->getGamemode() == Gamemode::SPECTATOR()) {
+                if (!$sender->isSpectator()) {
                     $sender->setGamemode(GameMode::SPECTATOR());
     
                 }
