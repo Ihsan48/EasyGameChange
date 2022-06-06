@@ -3,7 +3,7 @@
 namespace Ihsan48\SimpleGamemode;
 
 use pocketmine\player\Player;
-use pocketmine\player\Gamemode;
+use pocketmine\player\GameMode;
 use pocketmine\Server;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
@@ -14,33 +14,33 @@ class Loader extends PluginBase {
     public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
         switch ($cmd->getName()) {
             case "gmc":
-                if (!$sender->getGamemode() == Gamemode::CREATIVE()) {
-                    $sender->setGamemode(Gamemode::CREATIVE());
+                if (!$sender->getGamemode() == GameMode::CREATIVE()) {
+                    $sender->setGamemode(GameMode::CREATIVE());
 
                 }
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPerfix($args[0]);
-                    $target->setGamemode(Gamemode::CREATIVE());
+                    $target->setGamemode(GameMode::CREATIVE());
                 }
                 break;
             case "gms":
                 if (!$sender->getGamemode() == Gamemode::SURVIVAL()) {
-                    $sender->setGamemode(Gamemode::SURVIVAL());
+                    $sender->setGamemode(GameMode::SURVIVAL());
     
                 }
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPerfix($args[0]);
-                    $target->setGamemode(Gamemode::SURVIVAL());
+                    $target->setGamemode(GameMode::SURVIVAL());
                 }
                 break;
             case "gmspc":
                 if (!$sender->getGamemode() == Gamemode::SPECTATOR()) {
-                    $sender->setGamemode(Gamemode::SPECTATOR());
+                    $sender->setGamemode(GameMode::SPECTATOR());
     
                 }
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPerfix($args[0]);
-                    $target->setGamemode(Gamemode::SPECTATOR());
+                    $target->setGamemode(GameMode::SPECTATOR());
                 }
                 break;
         }
