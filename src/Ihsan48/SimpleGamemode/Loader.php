@@ -19,7 +19,7 @@ class Loader extends PluginBase {
 
                 }
                 if (isset($args[0])) {
-                    $target = $this->getServer()->getPlayerByPerfix($args[0]);
+                    $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::CREATIVE());
                 }
                 break;
@@ -29,7 +29,7 @@ class Loader extends PluginBase {
     
                 }
                 if (isset($args[0])) {
-                    $target = $this->getServer()->getPlayerByPerfix($args[0]);
+                    $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::SURVIVAL());
                 }
                 break;
@@ -39,7 +39,7 @@ class Loader extends PluginBase {
     
                 }
                 if (isset($args[0])) {
-                    $target = $this->getServer()->getPlayerByPerfix($args[0]);
+                    $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::SPECTATOR());
                 }
                 break;
