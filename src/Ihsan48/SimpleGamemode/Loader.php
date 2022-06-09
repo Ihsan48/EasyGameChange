@@ -12,6 +12,8 @@ use pocketmine\utils\Config;
 
 class Loader extends PluginBase {
     
+    private $cfg;
+
     public function onEnable() : void {
         $this->saveResource("config.yml");
         $this->cfg = new Config($this->getDataFolder() . "config.yml", Config::YAML);
