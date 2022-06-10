@@ -14,7 +14,7 @@ class Loader extends PluginBase {
     
     private $cfg;
     
-    protected Player $player;
+    protected CommandSender $sender;
 
     public function onEnable() : void {
         $this->saveResource("config.yml");
