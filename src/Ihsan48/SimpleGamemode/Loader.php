@@ -13,8 +13,6 @@ use pocketmine\utils\Config;
 class Loader extends PluginBase {
     
     private $cfg;
-    
-    protected CommandSender $sender;
 
     public function onEnable() : void {
         $this->saveResource("config.yml");
