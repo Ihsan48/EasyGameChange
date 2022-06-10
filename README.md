@@ -1,8 +1,8 @@
-### SimpleGamemode
+# SimpleGamemode
 
 Easy plugin to change gamemode
 
-### Commands
+# Commands
 |**Command**|**Description**|
 |-----------|---------------|
 |`/gms`|Survival Mode|
