@@ -19,3 +19,5 @@ permissions:
   gamemode.spectator:
     default: op
 ```
+
+By @Ihsan48
