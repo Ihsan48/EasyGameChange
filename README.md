@@ -20,4 +20,4 @@ permissions:
     default: op
 ```
 
-By @Ihsan48
+(C) @Ihsan48
