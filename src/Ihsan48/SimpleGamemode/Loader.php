@@ -28,10 +28,13 @@ class Loader extends PluginBase {
                 }
                     
                 if (isset($args[0])) {
-
-                    $target = $this->getServer()->getPlayerByPrefix($args[0]);
-                    $target->setGamemode(GameMode::CREATIVE());
-                    $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.creative")));
+                    if (($args[0]) != $sender->getName()) {
+                        $target = $this->getServer()->getPlayerByPrefix($args[0]);
+                        $target->setGamemode(GameMode::CREATIVE());
+                        $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.creative")));
+                    } else {
+                        $sender->sendMessage("§cYou can't change your gamemode with /gmc <string:name>");
+                    }
                 }
                 break;
             case "gms":
@@ -44,6 +47,8 @@ class Loader extends PluginBase {
                         $target = $this->getServer()->getPlayerByPrefix($args[0]);
                         $target->setGamemode(GameMode::SURVIVAL());
                         $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
+                    } else {
+                        $sender->sendMessage("§cYou can't change your gamemode with /gms <string:name>");
                     }
                 }
                 break;
@@ -53,9 +58,13 @@ class Loader extends PluginBase {
                     $sender->sendMessage($this->cfg->get("gamemode.spectator"));
                 }
                 if (isset($args[0])) {
-                    $target = $this->getServer()->getPlayerByPrefix($args[0]);
-                    $target->setGamemode(GameMode::SPECTATOR());
-                    $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.spectator")));
+                    if (($args[0]) != $sender->getName()) {
+                        $target = $this->getServer()->getPlayerByPrefix($args[0]);
+                        $target->setGamemode(GameMode::SPECTATOR());
+                        $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.spectator")));
+                    } else {
+                        $sender->sendMessage("§cYou can't change your gamemode with /gmspc <string:name>");
+                    }
                 }
                 break;
         }
