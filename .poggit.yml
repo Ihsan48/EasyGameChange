@@ -5,6 +5,4 @@ branches:
 projects:
   SimpleGamemode:
     path: ""
-    lint:
-      phpstan: false
 ...
