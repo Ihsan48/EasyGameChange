@@ -41,7 +41,7 @@ class Loader extends PluginBase {
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::SURVIVAL());
-                    $sender->sendMessage($this->cfg->get(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
+                    $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
                 }
                 break;
             case "gmspc":
