@@ -28,6 +28,7 @@ class Loader extends PluginBase {
                 }
                     
                 if (isset($args[0])) {
+
                     $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::CREATIVE());
                     $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.creative")));
@@ -39,9 +40,11 @@ class Loader extends PluginBase {
                     $sender->sendMessage($this->cfg->get("gamemode.survival"));
                 }
                 if (isset($args[0])) {
-                    $target = $this->getServer()->getPlayerByPrefix($args[0]);
-                    $target->setGamemode(GameMode::SURVIVAL());
-                    $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
+                    if (($args[0]) === $sender->getName()) {
+                        $target = $this->getServer()->getPlayerByPrefix($args[0]);
+                        $target->setGamemode(GameMode::SURVIVAL());
+                        $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
+                    }
                 }
                 break;
             case "gmspc":
