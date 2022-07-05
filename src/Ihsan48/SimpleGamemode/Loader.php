@@ -40,7 +40,7 @@ class Loader extends PluginBase {
                     $sender->sendMessage($this->cfg->get("gamemode.survival"));
                 }
                 if (isset($args[0])) {
-                    if (!($args[0]) === $sender->getName()) {
+                    if (($args[0]) != $sender->getName()) {
                         $target = $this->getServer()->getPlayerByPrefix($args[0]);
                         $target->setGamemode(GameMode::SURVIVAL());
                         $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
