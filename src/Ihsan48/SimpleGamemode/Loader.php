@@ -44,7 +44,7 @@ class Loader extends PluginBase {
                 if (!$sender->getGameMode()->equals(GameMode::SURVIVAL())) {
                     $sender->setGamemode(GameMode::SURVIVAL());
                     $sender->sendMessage($this->cfg->get("gamemode.survival"));]
-                  }
+                }
                }
                if (isset($args[0])) {
                     if (($args[0]) != $sender->getName()) {
