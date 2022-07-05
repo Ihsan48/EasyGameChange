@@ -30,7 +30,7 @@ class Loader extends PluginBase {
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::CREATIVE());
-                    $sender->sendMessage($this->cfg->get(str_replace("{name}", $target->getName(), "gamemode.other.creative")));
+                    $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.creative")));
                 }
                 break;
             case "gms":
@@ -41,7 +41,7 @@ class Loader extends PluginBase {
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::SURVIVAL());
-                    $sender->sendMessage($this->cfg->get(str_replace("{name}", $target->getName(), "gamemode.other.survival")));
+                    $sender->sendMessage($this->cfg->get(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
                 }
                 break;
             case "gmspc":
@@ -52,7 +52,7 @@ class Loader extends PluginBase {
                 if (isset($args[0])) {
                     $target = $this->getServer()->getPlayerByPrefix($args[0]);
                     $target->setGamemode(GameMode::SPECTATOR());
-                    $sender->sendMessage($this->cfg->get(str_replace("{name}", $target->getName(), "gamemode.other.spectator")));
+                    $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.spectator")));
                 }
                 break;
         }
