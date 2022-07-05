@@ -43,7 +43,8 @@ class Loader extends PluginBase {
                if(!$sender instanceof Player){                   
                   if (!$sender->getGameMode()->equals(GameMode::SURVIVAL())) {
                     $sender->setGamemode(GameMode::SURVIVAL());
-                    $sender->sendMessage($this->cfg->get("gamemode.survival"));
+                    $sender->sendMessage($this->cfg->get("gamemode.survival"));]
+                  }
                 }
                 if (isset($args[0])) {
                     if (($args[0]) != $sender->getName()) {
@@ -61,7 +62,8 @@ class Loader extends PluginBase {
                     $sender->setGamemode(GameMode::SPECTATOR());
                     $sender->sendMessage($this->cfg->get("gamemode.spectator"));
                 }
-                if (isset($args[0])) {
+               }
+               if (isset($args[0])) {
                     if (($args[0]) != $sender->getName()) {
                         $target = $this->getServer()->getPlayerByPrefix($args[0]);
                         $target->setGamemode(GameMode::SPECTATOR());
