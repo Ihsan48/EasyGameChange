@@ -26,5 +26,5 @@ permissions:
     default: op
   gamemode.spectator:
     default: op
-  gamemode.spectator.othee:
+  gamemode.spectator.other:
     default: op
