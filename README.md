@@ -25,5 +25,3 @@ permissions:
   gamemode.spectator.other:
     default: op
 ```
-
-(C) @Ihsan48
