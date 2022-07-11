@@ -12,7 +12,7 @@ use pocketmine\utils\Config;
 
 class Loader extends PluginBase {
     
-    private $cfg;
+    private Config $cfg;
 
     public function onEnable() : void {
         $this->saveResource("config.yml");
@@ -23,61 +23,91 @@ class Loader extends PluginBase {
         switch ($cmd->getName()) {
             case "gmc":
                 if ($sender instanceof Player) {
-                    if (!$sender->getGameMode()->equals(GameMode::CREATIVE())) {
-                        $sender->setGamemode(GameMode::CREATIVE());
-                        $sender->sendMessage($this->cfg->get("gamemode.creative"));
+                    if ($sender->hasPermission("gamemode.creative")) {
+                        if (!$sender->getGameMode()->equals(GameMode::CREATIVE())) {
+                            $sender->setGamemode(GameMode::CREATIVE());
+                            $sender->sendMessage($this->cfg->get("gamemode.creative"));
+                        }
+                    } else {
+                        $sender->sendMessage("§cYou don't have a permission to use this command");
                     }
                 } else {
                     $sender->sendMessage("Your are not a player");
                 }
-                    
-                if (isset($args[0])) {
-                    if (($args[0]) != $sender->getName()) {
-                        $target = $this->getServer()->getPlayerByPrefix($args[0]);
-                        $target->setGamemode(GameMode::CREATIVE());
-                        $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.creative")));
-                    } else {
-                        $sender->sendMessage("§cYou can't change your gamemode with /gmc <string:name>");
+
+                if (strtolower($args[0])) {
+                    if (isset($args[0])) {
+                        if ($sender->hasPermission("gamemode.creative.other")) {
+                            if (($args[0]) != $sender->getName()) {
+                                $target = $this->getServer()->getPlayerByPrefix($args[0]);
+                                $target->setGamemode(GameMode::CREATIVE());
+                                $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.creative")));
+                            } else {
+                                $sender->sendMessage("§cYou can't change your gamemode with /gmc <string:name>");
+                            }
+                        } else {
+                            $sender->sendMessage("§cYou don't have a permission to use this command");
+                        }
                     }
                 }
                 break;
             case "gms":
                 if ($sender instanceof Player) {
-                    if (!$sender->getGameMode()->equals(GameMode::SURVIVAL())) {
-                        $sender->setGamemode(GameMode::SURVIVAL());
-                        $sender->sendMessage($this->cfg->get("gamemode.survival"));
+                    if ($sender->hasPermission("gamemode.survival")) {
+                        if (!$sender->getGameMode()->equals(GameMode::SURVIVAL())) {
+                            $sender->setGamemode(GameMode::SURVIVAL());
+                            $sender->sendMessage($this->cfg->get("gamemode.survival"));
+                        }
+                    } else {
+                        $sender->sendMessage("§cYou don't have a permission to use this command");
                     }
                 } else {
                     $sender->sendMessage("Your are not a player");
                 }
 
-                if (isset($args[0])) {
-                    if (($args[0]) != $sender->getName()) {
-                        $target = $this->getServer()->getPlayerByPrefix($args[0]);
-                        $target->setGamemode(GameMode::SURVIVAL());
-                        $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
-                    } else {
-                        $sender->sendMessage("§cYou can't change your gamemode with /gms <string:name>");
+                if (strtolower($args[0])) {
+                    if (isset($args[0])) {
+                        if ($sender->hasPermission("gamemode.survial.other")) {
+                            if (($args[0]) != $sender->getName()) {
+                                $target = $this->getServer()->getPlayerByPrefix($args[0]);
+                                $target->setGamemode(GameMode::SURVIVAL());
+                                $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.survival")));
+                            } else {
+                                $sender->sendMessage("§cYou can't change your gamemode with /gms <string:name>");
+                            }
+                        } else {
+                            $sender->sendMessage("§cYou don't have a permission to use this command");
+                        }
                     }
                 }
                 break;
             case "gmspc":
                 if ($sender instanceof Player) {
-                    if (!$sender->getGameMode()->equals(GameMode::SPECTATOR())) {
-                        $sender->setGamemode(GameMode::SPECTATOR());
-                        $sender->sendMessage($this->cfg->get("gamemode.spectator"));
+                    if ($sender->hasPermission("gamemode.spectator")) {
+                        if (!$sender->getGameMode()->equals(GameMode::SPECTATOR())) {
+                            $sender->setGamemode(GameMode::SPECTATOR());
+                            $sender->sendMessage($this->cfg->get("gamemode.spectator"));
+                        }
+                    } else {
+                        $sender->sendMessage("§cYou don't have a permission to use this command");
                     }
                 } else {
                     $sender->sendMessage("Your are not a player");
                 }
 
-                if (isset($args[0])) {
-                    if (($args[0]) != $sender->getName()) {
-                        $target = $this->getServer()->getPlayerByPrefix($args[0]);
-                        $target->setGamemode(GameMode::SPECTATOR());
-                        $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.spectator")));
-                    } else {
-                        $sender->sendMessage("§cYou can't change your gamemode with /gmspc <string:name>");
+                if (strtolower($args[0])) {
+                    if (isset($args[0])) {
+                        if ($sender->hasPermission("gamemode.spectator.other")) {
+                            if (($args[0]) != $sender->getName()) {
+                                $target = $this->getServer()->getPlayerByPrefix($args[0]);
+                                $target->setGamemode(GameMode::SPECTATOR());
+                                $sender->sendMessage(str_replace("{name}", $target->getName(), $this->cfg->get("gamemode.other.spectator")));
+                            } else {
+                                $sender->sendMessage("§cYou can't change your gamemode with /gmspc <string:name>");
+                            }
+                        } else {
+                            $sender->sendMessage("§cYou don't have a permission to use this command");
+                        }
                     }
                 }
                 break;
