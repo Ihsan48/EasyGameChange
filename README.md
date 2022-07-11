@@ -14,9 +14,15 @@ Easy plugin to change gamemode
 permissions:
   gamemode.creative:
     default: op
+  gamemode.creative.other:
+    default: op
   gamemode.survival:
     default: op
+  gamemode.survival.other:
+    default: op
   gamemode.spectator:
+    default: op
+  gamemode.spectator.other:
     default: op
 ```
 
