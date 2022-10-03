@@ -1,4 +1,4 @@
-name: SimpleGamemode
+name: EasyGameChange
 version: 1.0.0
 api: 4.0.0
 main: Ihsan48\SimpleGamemode\Loader
@@ -7,24 +7,24 @@ author: Ihsan48
 commands:
   gmc:
     description: "Change gamemode to Creative"
-    permission: gamemode.creative
+    permission: easygamechange.creative
   gms:
     description: "Change gamemode to Survival"
-    permission: gamemode.survival
+    permission: easygamechange.survival
   gmspc:
     description: "Change gamemode to Spectator"
-    permission: gamemode.spectator
+    permission: easygamechange.spectator
 
 permissions:
-  gamemode.creative:
+  easygamechange.creative:
     default: op
-  gamemode.creative.other:
+  easygamechange.creative.other:
     default: op
-  gamemode.survival:
+  easygamechange.survival:
     default: op
-  gamemode.survival.other:
+  easygamechange.survival.other:
     default: op
-  gamemode.spectator:
+  easygamechange.spectator:
     default: op
-  gamemode.spectator.other:
+  easygamechange.spectator.other:
     default: op
