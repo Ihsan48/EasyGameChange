@@ -1,4 +1,4 @@
-<?php
+P<?php
 
 namespace Ihsan48\SimpleGamemode;
 
@@ -23,7 +23,7 @@ class Loader extends PluginBase {
         switch ($cmd->getName()) {
             case "gmc":
                 if ($sender instanceof Player) {
-                    if ($sender->hasPermission("gamemode.creative")) {
+                    if ($sender->hasPermission("easygamechange.creative")) {
                         if (!$sender->getGameMode()->equals(GameMode::CREATIVE())) {
                             $sender->setGamemode(GameMode::CREATIVE());
                             $sender->sendMessage($this->cfg->get("gamemode.creative"));
@@ -37,7 +37,7 @@ class Loader extends PluginBase {
 
                 if (strtolower($args[0])) {
                     if (isset($args[0])) {
-                        if ($sender->hasPermission("gamemode.creative.other")) {
+                        if ($sender->hasPermission("easygamechange.creative.other")) {
                             if (($args[0]) != $sender->getName()) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[0]);
                                 $target->setGamemode(GameMode::CREATIVE());
@@ -53,7 +53,7 @@ class Loader extends PluginBase {
                 break;
             case "gms":
                 if ($sender instanceof Player) {
-                    if ($sender->hasPermission("gamemode.survival")) {
+                    if ($sender->hasPermission("easygamechange.survival")) {
                         if (!$sender->getGameMode()->equals(GameMode::SURVIVAL())) {
                             $sender->setGamemode(GameMode::SURVIVAL());
                             $sender->sendMessage($this->cfg->get("gamemode.survival"));
@@ -67,7 +67,7 @@ class Loader extends PluginBase {
 
                 if (strtolower($args[0])) {
                     if (isset($args[0])) {
-                        if ($sender->hasPermission("gamemode.survial.other")) {
+                        if ($sender->hasPermission("easygamechange.survial.other")) {
                             if (($args[0]) != $sender->getName()) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[0]);
                                 $target->setGamemode(GameMode::SURVIVAL());
@@ -83,7 +83,7 @@ class Loader extends PluginBase {
                 break;
             case "gmspc":
                 if ($sender instanceof Player) {
-                    if ($sender->hasPermission("gamemode.spectator")) {
+                    if ($sender->hasPermission("easygamechange.spectator")) {
                         if (!$sender->getGameMode()->equals(GameMode::SPECTATOR())) {
                             $sender->setGamemode(GameMode::SPECTATOR());
                             $sender->sendMessage($this->cfg->get("gamemode.spectator"));
@@ -97,7 +97,7 @@ class Loader extends PluginBase {
 
                 if (strtolower($args[0])) {
                     if (isset($args[0])) {
-                        if ($sender->hasPermission("gamemode.spectator.other")) {
+                        if ($sender->hasPermission("easygamechange.spectator.other")) {
                             if (($args[0]) != $sender->getName()) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[0]);
                                 $target->setGamemode(GameMode::SPECTATOR());
