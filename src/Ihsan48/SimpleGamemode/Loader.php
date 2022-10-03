@@ -1,4 +1,4 @@
-P<?php
+<?php
 
 namespace Ihsan48\SimpleGamemode;
 
