@@ -1,4 +1,4 @@
-# SimpleGamemode
+# EasyGameChange
 
 Easy plugin to change gamemode
 
