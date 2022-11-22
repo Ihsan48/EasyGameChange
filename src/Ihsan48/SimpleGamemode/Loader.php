@@ -4,7 +4,6 @@ namespace Ihsan48\SimpleGamemode;
 
 use pocketmine\player\Player;
 use pocketmine\player\GameMode;
-use pocketmine\Server;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\plugin\PluginBase;
