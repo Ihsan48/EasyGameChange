@@ -1,7 +1,7 @@
 name: EasyGameChange
 version: 1.0.0
 api: 4.0.0
-main: Ihsan48\SimpleGamemode\Loader
+main: Ihsan48\EasyGameChange\Loader
 author: Ihsan48
 
 commands:

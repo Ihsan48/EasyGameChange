@@ -1,6 +1,6 @@
 <?php
 
-namespace Ihsan48\SimpleGamemode;
+namespace Ihsan48\EasyGameChange;
 
 use pocketmine\player\Player;
 use pocketmine\player\GameMode;
