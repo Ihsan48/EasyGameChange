@@ -11,17 +11,16 @@ Easy plugin to change gamemode
 
 # Permissions
 ```
-permissions:
-  gamemode.creative:
+easygamechange.creative:
     default: op
-  gamemode.creative.other:
+  easygamechange.creative.other:
     default: op
-  gamemode.survival:
+  easygamechange.survival:
     default: op
-  gamemode.survival.other:
+  easygamechange.survival.other:
     default: op
-  gamemode.spectator:
+  easygamechange.spectator:
     default: op
-  gamemode.spectator.other:
+  easygamechange.spectator.other:
     default: op
 ```
