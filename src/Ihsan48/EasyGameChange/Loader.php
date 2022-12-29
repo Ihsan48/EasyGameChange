@@ -34,8 +34,8 @@ class Loader extends PluginBase {
                     $sender->sendMessage("Your are not a player");
                 }
 
-                if (strtolower($args[0])) {
-                    if (isset($args[0])) {
+                if (isset($args[0])) {
+                    if (strtolower($args[0])) {
                         if ($sender->hasPermission("easygamechange.creative.other")) {
                             if (($args[0]) != $sender->getName()) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[0]);
@@ -64,8 +64,8 @@ class Loader extends PluginBase {
                     $sender->sendMessage("Your are not a player");
                 }
 
-                if (strtolower($args[0])) {
-                    if (isset($args[0])) {
+                if (isset($args[0])) {
+                    if (strtolower($args[0])) {
                         if ($sender->hasPermission("easygamechange.survial.other")) {
                             if (($args[0]) != $sender->getName()) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[0]);
@@ -94,8 +94,8 @@ class Loader extends PluginBase {
                     $sender->sendMessage("Your are not a player");
                 }
 
-                if (strtolower($args[0])) {
-                    if (isset($args[0])) {
+                if (isset($args[0])) {
+                    if (strtolower($args[0])) {
                         if ($sender->hasPermission("easygamechange.spectator.other")) {
                             if (($args[0]) != $sender->getName()) {
                                 $target = $this->getServer()->getPlayerByPrefix($args[0]);
