@@ -2,6 +2,7 @@
 build-by-default: true
 branches:
 - main
+- API5
 projects:
   SimpleGamemode:
     path: ""
